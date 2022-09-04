@@ -42,7 +42,7 @@ const CurrentWeather = ({ data }) => {
           <div className="parameter-row">
             <span className="parameter-label">Pressure</span>
             <span className="parameter-value">
-              {Math.round(data.main.pressure)}hPa
+              {Math.round(data.main.pressure)} hPa
             </span>
           </div>
         </div>
