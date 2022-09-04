@@ -25,7 +25,7 @@ const Forecast = ({ data }) => {
 
   return (
     <>
-      <label className="title">Daily</label>
+      <label className="title">Daily forecast</label>
       <Accordion allowZeroExpanded>
         {data.list.splice(0, 7).map((item, idx) => (
           <AccordionItem key={idx}>
@@ -42,8 +42,7 @@ const Forecast = ({ data }) => {
                     {item.weather[0].description}
                   </label>
                   <label className="min-max">
-                    {Math.round(item.main.temp_min)}°C /{" "}
-                    {Math.round(item.main.temp_max)}°C{" "}
+                    {Math.round(item.main.temp)}°C 
                   </label>
                 </div>
               </AccordionItemButton>
@@ -52,7 +51,7 @@ const Forecast = ({ data }) => {
               <div className="daily-details-grid">
                 <div className="daily-details-grid-item">
                   <label>Pressure</label>
-                  <label>{item.main.pressure}hPa</label>
+                  <label>{item.main.pressure} hPa</label>
                 </div>
                 <div className="daily-details-grid-item">
                   <label>Humidity</label>
@@ -64,15 +63,7 @@ const Forecast = ({ data }) => {
                 </div>
                 <div className="daily-details-grid-item">
                   <label>Wind speed</label>
-                  <label>{item.wind.speed}m/s</label>
-                </div>
-                <div className="daily-details-grid-item">
-                  <label>Sea level</label>
-                  <label>{item.main.sea_level}m</label>
-                </div>
-                <div className="daily-details-grid-item">
-                  <label>Feels like</label>
-                  <label>{item.main.feels_like}°C</label>
+                  <label>{Math.round(item.wind.speed)} m/s</label>
                 </div>
               </div>
             </AccordionItemPanel>
